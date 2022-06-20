@@ -41,7 +41,7 @@
     var canonicalURL = window.location.href;
     var linkData = {
       "$canonical_url": canonicalURL,
-      "campaign":"TTSite"
+      "campaign":"BBSite"
     };
 
     branch.link(linkData, function(err, link) {
@@ -53,11 +53,42 @@
             });
   }
 
+  function buyEvent () {
+    console.log("buying");
+    var commerce_data = {"revenue":28.45,
+      "currency":"USD",
+      "transaction_id":"313299",
+      "shipping":5.95,
+      "tax":0,
+      //"~referring_link":"379998049730159899",
+      "products":[{"sku":"xbar1788","name":"SAFTB Golf Towel - GOLF / SAFTB","price":25,"quantity":1,"category":"","variant":"GOLF / SAFTB"}]
+    };
+    var metadata =  {};
+    branch.trackCommerceEvent('purchase', commerce_data, metadata, function(err) {
+        if(err) {
+             throw err;
+        }
+    });
+  };
+
+
+
     </script>
 </head>
 <body>
     <h1>Contact page</h1>
     <p>Updated with Branch Deeplink Data</p>
     <p>Updated Again</p>
+
+    <section>
+        <div class="row col-lg-8 col-lg-offset-2">
+            <div class="group">
+             <h4>Make a Link</h4>
+              <button class="btn btn-info" onclick="makeLink()">Link</button>
+            </div>
+            <br>
+            <textarea class="form-control" style="height:40px; margin-bottom:5%;" id="generatedLink" type="text"></textarea>
+          </div>
+    </section>
 </body>
 </html>
