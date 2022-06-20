@@ -14,7 +14,9 @@
         branch.init('key_live_pfXRGHm8v4dqw6tUDF2e3ekctxlbGz8U', 
         {
             "metadata": {
-                "$campaign": $('meta[name="owner_name"]').attr('content')
+                "campaign": "BBSite"
+//                "$campaign": $('meta[name="owner_name"]').attr('content')
+
             }
         },
         
@@ -26,9 +28,7 @@
 
         function makeLink () {
             var linkData = {
-                "$desktop_url": "https://brandonbranch.github.io/BrandonBranch/",
-                "$campaign": $('meta[name="owner_name"]').attr('content')
-
+                "desktop_url": "https://brandonbranch.github.io/BrandonBranch/"
             };
 
             branch.link(linkData, function(err, link) {
