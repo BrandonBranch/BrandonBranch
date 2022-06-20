@@ -32,11 +32,8 @@
         });
 
         function makeLink () {
-            var canonicalURL = window.location.href;
             var linkData = {
-                "$canonical_url": "https://brandonbranch.github.io/BrandonBranch/",
-                "$owner_name": "brandon_boothe",
-                "$campaign": "BBSite"
+                "$desktop_url": "https://brandonbranch.github.io/BrandonBranch/"
             };
 
             branch.link(linkData, function(err, link) {
@@ -60,6 +57,7 @@
     <p>Some More Text</p>
     <p>Some More Text Again</p>
     <p>Some More More Text Again</p>
+    <p>MakeLink Should Work</p>
     
     <section>
         <div class="row col-lg-8 col-lg-offset-2">
