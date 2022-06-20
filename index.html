@@ -6,12 +6,38 @@
     <title>Document</title>
     <script type="text/javascript">
 
+        
         (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking getBrowserFingerprintId crossPlatformIds lastAttributedTouchData".split(" "), 0);
     
-        branch.init('key_live_pfXRGHm8v4dqw6tUDF2e3ekctxlbGz8U', function(err, data) {
+        branch.init('key_live_pfXRGHm8v4dqw6tUDF2e3ekctxlbGz8U', 
+        {
+            "metadata": {
+                "$owner_name":"brandon_boothe"
+            }
+        },
+        
+        function(err, data) {
             // callback to handle err or data
             
         });
+
+        function makeLink () {
+            var canonicalURL = window.location.href;
+            var linkData = {
+                "$canonical_url": canonicalURL,
+                "campaign":"BBSite"
+            };
+
+            branch.link(linkData, function(err, link) {
+                if (err == null) {
+                    document.getElementById('generatedLink').value = link;
+                } else {
+                    document.getElementById('generatedLink').value = err;
+                }
+            });
+        }
+
+
     </script>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -22,7 +48,18 @@
     <p>Some More Text</p>
     <p>Some More Text Again</p>
     <p>Some More More Text Again</p>
-
+    
+    <section>
+        <div class="row col-lg-8 col-lg-offset-2">
+            <div class="group">
+             <h4>Make a Link</h4>
+              <button class="btn btn-info" onclick="makeLink()">Link</button>
+            </div>
+            <br>
+            <textarea class="form-control" style="height:40px; margin-bottom:5%;" id="generatedLink" type="text"></textarea>
+          </div>
+    </section>
+    
 </body>
 </html>
 
