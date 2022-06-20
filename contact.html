@@ -22,9 +22,11 @@
         
         function(err, data) {
             // callback to handle err or data
-            trackPage();
         });
 
+        trackPage();
+
+        
         function trackPage() {
             var event_and_custom_data = {
                 "description": "User Opened Content Page",
