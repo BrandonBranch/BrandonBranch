@@ -12,9 +12,9 @@
         branch.init('key_live_pfXRGHm8v4dqw6tUDF2e3ekctxlbGz8U', 
         {
             "metadata": {
-                $canonical_url : "https://brandonbranch.github.io/BrandonBranch/" ,
-                $owner_name : "brandon_boothe" ,
-                $campaign : "BBSite"
+                '$canonical_url' : 'https://brandonbranch.github.io/BrandonBranch/' ,
+                '$owner_name' : 'brandon_boothe' ,
+                '$campaign' : 'BBSite'
             }
         },
         
@@ -23,10 +23,17 @@
             
         });
 
+        branch.setBranchViewData({
+            data: {
+                '$canonical_url' : 'https://brandonbranch.github.io/BrandonBranch/' ,
+                '$owner_name' : 'brandon_boothe' ,
+                '$campaign' : 'BBSite'
+            }
+        });
+
         function makeLink () {
-            var canonicalURL = window.location.href;
             var linkData = {
-                "$canonical_url": canonicalURL,
+                "$canonical_url": 'https://brandonbranch.github.io/BrandonBranch/',
                 "$owner_name": "brandon_boothe",
                 "$campaign": "BBSite"
             };
@@ -40,6 +47,7 @@
             });
         }
 
+        
 
     </script>
     <link rel="stylesheet" href="styles.css">
