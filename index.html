@@ -90,7 +90,25 @@
             );
         };
 
-        
+        function trackCommerceEvent() {
+            var event_and_custom_data = {
+            "description": "Item Added to Cart",
+            "item_name": "Nike Air Max 1s",
+            "registration_id": "12345"
+            };
+
+        var customer_event_alias = "brandon_boothe";
+
+        branch.logEvent(
+            "ADD_TO_CART",
+            event_and_custom_data,
+            customer_event_alias,
+            function(err) { 
+                console.log("Item Added to Cart");
+                console.log(customer_event_alias);
+                console.log(event_and_custom_data); }
+            );
+        };
 
     </script>
     <link rel="stylesheet" href="styles.css">
@@ -113,7 +131,9 @@
             <br>
             <textarea class="form-control" style="height:40px; margin-bottom:5%;" id="generatedLink" type="text"></textarea>
             <h4>Track Registration</h4>
-              <button class="btn btn-info" onclick="trackRegistration()">Link</button>
+              <button class="btn btn-info" onclick="trackRegistration()">Register User</button>
+            <h4>Add Item To Cart</h4>
+              <button class="btn btn-info" onclick="trackCommerceEvent()">Add Shoe to Cart</button>
             </div>
             <br>
           </div>
