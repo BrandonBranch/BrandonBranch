@@ -3,6 +3,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="brandon_boothe" name="owner_name">
+
     <title>Document</title>
     <script type="text/javascript">
 
@@ -12,9 +14,7 @@
         branch.init('key_live_pfXRGHm8v4dqw6tUDF2e3ekctxlbGz8U', 
         {
             "metadata": {
- //               "$canonical_url": "https://brandonbranch.github.io/BrandonBranch/",
- //               "$owner_name": "brandon_boothe",
- //               "$campaign": "BBSite"
+                "$campaign": $('meta[name="owner_name"]').attr('content')
             }
         },
         
@@ -26,7 +26,9 @@
 
         function makeLink () {
             var linkData = {
-                "$desktop_url": "https://brandonbranch.github.io/BrandonBranch/"
+                "$desktop_url": "https://brandonbranch.github.io/BrandonBranch/",
+                "$campaign": $('meta[name="owner_name"]').attr('content')
+
             };
 
             branch.link(linkData, function(err, link) {
