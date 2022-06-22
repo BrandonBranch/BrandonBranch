@@ -122,6 +122,25 @@
 
         gtag('config', 'UA-232454999-1');
     </script>
+
+
+<script>
+    const headers = new Headers()
+headers.append("Content-Type", "application/json")
+
+const body = {
+  "test": "event"
+}
+
+const options = {
+  method: "POST",
+  headers,
+  mode: "cors",
+  body: JSON.stringify(body),
+}
+
+fetch("https://eotn8oiyd0mjz9v.m.pipedream.net", options)
+</script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
