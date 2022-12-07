@@ -21,6 +21,7 @@
             }
         },
         
+
         function(err, data) {
             // callback to handle err or data
 
@@ -29,18 +30,19 @@
         });
 
 
+
         branch.setBranchViewData({
         data: {
             "~campaign": "didnt close journey",
           referring_domain: "product/65862506"
         },
-
+        
       });
 
-      
+      branch.closeJourney();
 
-      
       branch.track("pageview");
+        
 
       
 
